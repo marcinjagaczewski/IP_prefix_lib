@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "Debug (WSL, CMake)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/main",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "externalConsole": false,
+            "internalConsoleOptions": "neverOpen",
+            "preLaunchTask": "build (CMake + Make, auto mkdir)"
+        }
+    ]
+}

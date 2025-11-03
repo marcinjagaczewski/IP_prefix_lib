@@ -1,0 +1,1 @@
+/usr/bin/cc -g -O0 CMakeFiles/main.dir/src/ipLib.c.o CMakeFiles/main.dir/src/main.c.o -o main 
