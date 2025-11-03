@@ -34,31 +34,31 @@ void main(void)
 
     /* Unit tests for add() and del() functions*/
 
-    printf("- Case where prefix database is empty and we trying remove doesn't exists prefix.: ");
+    printf("- The case where prefix database is empty and we trying remove doesn't exists prefix.: ");
     prefix = prefixFromStr("11.20.0.0/16");
     status = del(prefix.ip.base, prefix.mask);
     if(status == -1) { printf("PASS\n"); }
     else { printf("FAIL (returned: %d)\n", status); }
 
-    printf("- Case where we add first prefix to prefix database.: ");
+    printf("- The case where we add first prefix to prefix database.: ");
     prefix = prefixFromStr("11.20.0.0/16");
     status = add(prefix.ip.base, prefix.mask);
     if(status == 0) { printf("PASS\n"); }
     else { printf("FAIL (returned: %d)\n", status); }
 
-    printf("- Case where we add existed prefix in prefix database.: ");
+    printf("- The case where we add existed prefix in prefix database.: ");
     prefix = prefixFromStr("11.20.0.0/16");
     status = add(prefix.ip.base, prefix.mask);
     if(status == -1) { printf("PASS\n"); }
     else { printf("FAIL (returned: %d)\n", status); }
 
-    printf("- Case where we have one element in prefix base and trying remove doesn't exists prefix.: ");
+    printf("- The case where we have one element in prefix base and trying remove doesn't exists prefix.: ");
     prefix = prefixFromStr("11.20.0.0/17");
     status = del(prefix.ip.base, prefix.mask);
     if(status == -1) { printf("PASS\n"); }
     else { printf("FAIL (returned: %d)\n", status); }
 
-    printf("- Case where we have one element in prefix base and trying remove exists prefix.: ");
+    printf("- The case where we have one element in prefix base and trying remove exists prefix.: ");
     prefix = prefixFromStr("11.20.0.0/16");
     status = del(prefix.ip.base, prefix.mask);
     if(status == 0) { printf("PASS\n"); }
@@ -199,7 +199,6 @@ void main(void)
     {
         prefix = prefixFromStr(prefixesToDelete[i]);
         status = del(prefix.ip.base, prefix.mask);
-        printf("-----------------------\n");
         if(status != 0) {break;}
     }
     if(status == 0) { printf("PASS\n"); }
